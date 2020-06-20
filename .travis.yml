@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 8.11.1
+git:
+  depth: 3
+sudo: required
+before_install:
+  - npm i npm@latest -g
+  - sed -i 's/overallConfig.url.dev/overallConfig.url.prod/' src/main.js
+install:
+  - npm install
+script:
+  - npm run build
+  - echo "test"
+after_success:
+  - if [ $TRAVIS_BRANCH == "front" && $TRAVIS_PULL_REQUEST == "false" ]; then sh deploy.sh; fi
