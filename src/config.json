@@ -1,6 +1,6 @@
 {
-  "url": {
-    "dev": "http://localhost:11220/",
-    "prod": "http://rs.lalxyy.me:11220/"
-  }
+    "url": {
+        "dev": "http://localhost:3000/",
+        "prod": "http://rs.lalxyy.me:11220/"
+    }
 }

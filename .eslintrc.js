@@ -7,6 +7,7 @@ module.exports = {
   },
   env: {
     browser: true,
+    // node: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   // extends: 'standard',
@@ -20,11 +21,18 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
+    'no-unused-vars': ['warn', {
+      'vars': 'all',
+      'args': 'after-used',
+      'ignoreRestSiblings': false
+    }],
     'comma-dangle': [2],
     'no-trailing-spaces': ['warn'],
     'space-before-function-paren': [0],
     'padded-blocks': [0],
-    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }]
-  }
+    // "vue/no-parsing-error": [2, {
+    //   "x-invalid-end-tag": false
+    // }
+  // ]
+}
 }

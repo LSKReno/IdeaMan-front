@@ -19,19 +19,32 @@
       <Col span="8" class="box-introduction-left">
         <h1>Interest</h1>
         <div class="box-in-detail">
-          <Button class="interest-tag" v-for="t in interests" :key="t" size="small" type="primary"><Icon type="md-pricetag" /> {{ t }}</Button>
+          <Button class="interest-tag" v-for="t in interests" :key="t" size="small" type="primary">
+            <Icon type="md-pricetag" />
+            {{ t }}
+          </Button>
         </div>
       </Col>
       <Col span="8" class="box-introduction">
         <h1>Contact</h1>
         <div class="box-in-detail">
-          <p><Icon type="ios-call" /> {{ contacts.telephone }}</p>
-          <p><Icon type="ios-mail" /> {{ contacts.email }}</p>
+          <p>
+            <Icon type="ios-call" />
+            {{ contacts.telephone }}
+          </p>
+          <p>
+            <Icon type="ios-mail" />
+            {{ contacts.email }}
+          </p>
         </div>
       </Col>
       <Col span="8" class="box-introduction-right">
         <h1>Relationship</h1>
-        <div id="authorRelationship" ref="authorRelationship" class="box-in-detail">Reserved for network.</div>
+        <div
+          id="authorRelationship"
+          ref="authorRelationship"
+          class="box-in-detail"
+        >Reserved for network.</div>
       </Col>
     </Row>
     <Row class="row-distance">
@@ -43,82 +56,75 @@
     <Row class="row-distance">
       <Col span="24">
         <h1>Recommendations</h1>
-        <div class="box-in-detail">
-          Available after login.
-        </div>
+        <div class="box-in-detail">Available after login.</div>
       </Col>
     </Row>
   </div>
 </template>
 
 <script>
-  import authorPicture from '@/assets/citations.jpg'
+import authorPicture from "@/assets/citations.jpg";
 
-  export default {
-    name: 'Author',
-    data () {
-      return {
-        name: 'Tanmay Shankar',
-        institution: 'School of Computer Science, Carnegie Mellon University',
-        authorPic: authorPicture,
-        interests: [
-            'cs.LG',
-            'cs.AI',
-            'cs.CV',
-            'cs.RO',
-            'stat.ML'
-        ],
-        contacts: {
-          telephone: '+1 (412) 537-1968',
-          email: 'tanmayshankar@cmu.edu'
+export default {
+  name: "Author",
+  data() {
+    return {
+      name: "Tanmay Shankar",
+      institution: "School of Computer Science, Carnegie Mellon University",
+      authorPic: authorPicture,
+      interests: ["cs.LG", "cs.AI", "cs.CV", "cs.RO", "stat.ML"],
+      contacts: {
+        telephone: "+1 (412) 537-1968",
+        email: "tanmayshankar@cmu.edu"
+      },
+      papers: [
+        {
+          type: "arXiv",
+          id: "0000.00000",
+          title:
+            "Reinforcement learning via recurrent convolutional neural networks",
+          lastUpdate: new Date(2012, 0, 4),
+          published: new Date(2012, 0, 4)
         },
-        papers: [
-          {
-            type: 'arXiv',
-            id: '0000.00000',
-            title: 'Reinforcement learning via recurrent convolutional neural networks',
-            lastUpdate: new Date(2012, 0, 4),
-            published: new Date(2012, 0, 4)
-          },
-          {
-            type: 'arXiv',
-            id: '0000.00001',
-            title: 'Hierarchical Reinforcement Learning for Sequencing Behaviors',
-            lastUpdate: new Date(2012, 0, 4),
-            published: new Date(2012, 0, 4)
-          },
-          {
-            type: 'arXiv',
-            id: '0000.00002',
-            title: 'Development of an assistive stereo vision system',
-            lastUpdate: new Date(2012, 1, 4),
-            published: new Date(2012, 1, 4)
-          },
-          {
-            type: 'arXiv',
-            id: '0000.00003',
-            title: 'A Hybrid Assistive Wheelchair Exoskeleton',
-            lastUpdate: new Date(2012, 1, 4),
-            published: new Date(2012, 1, 4)
-          },
-        ],
-        paperTableColumns: [
-          {
-            title: 'Title',
-            key: 'title'
-          },
-          // {
-          //   title: 'Last Updated',
-          //   key: 'lastUpdate'
-          // },
-          // {
-          //   title: 'Published',
-          //   key: 'published'
-          // }
-        ]
-      }
-    }
-  };
+        {
+          type: "arXiv",
+          id: "0000.00001",
+          title: "Hierarchical Reinforcement Learning for Sequencing Behaviors",
+          lastUpdate: new Date(2012, 0, 4),
+          published: new Date(2012, 0, 4)
+        },
+        {
+          type: "arXiv",
+          id: "0000.00002",
+          title: "Development of an assistive stereo vision system",
+          lastUpdate: new Date(2012, 1, 4),
+          published: new Date(2012, 1, 4)
+        },
+        {
+          type: "arXiv",
+          id: "0000.00003",
+          title: "A Hybrid Assistive Wheelchair Exoskeleton",
+          lastUpdate: new Date(2012, 1, 4),
+          published: new Date(2012, 1, 4)
+        }
+      ],
+      paperTableColumns: [
+        {
+          title: "Title",
+          key: "title"
+        }
+        // {
+        //   title: 'Last Updated',
+        //   key: 'lastUpdate'
+        // },
+        // {
+        //   title: 'Published',
+        //   key: 'published'
+        // }
+      ]
+    };
+  }
+};
 </script>
 
 <style scoped>
